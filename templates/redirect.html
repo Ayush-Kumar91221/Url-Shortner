@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container ">
+    <h2 class> URL: </h2>
+    <p>{{obj.original_URL}}</p>
+    <h6 class='mt-5 '>Your Request: {{obj.short_URL}}</h6>
+    <a href="{{obj.original_URL}}"><button type="submit" class="btn btn-success mt-3">Visit website</button></a>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='container m-5'>
+<a href="/create"><button type="button" class="btn btn-primary">Create short URL</button></a>
+</div>
+<div class="container mt-5 ">
+    <table class="table">
+      <thead>
+        <tr>
+          {% comment %} <th scope="col">#</th> {% endcomment %}
+          <th scope="col">Original URL</th>
+          <th scope="col">Short URL</th>
+          <th scope="col">Date Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}    
+        <tr>
+          {% comment %} <th scope="row">row._id</th> {% endcomment %}
+          <td>{{row.original_URL|slice:":30"}}...</td>
+          <td>http://localhost:8000/{{row.short_URL}}</td>
+          <td>{{row.time_date_created}}</td>
+        </tr>
+{% endfor %}
+        {% comment %} <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr> {% endcomment %}
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}
